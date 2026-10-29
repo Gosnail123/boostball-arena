@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#07111f">
+  <title>Boostball Arena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game"></div>
+  <div id="loading" class="loading">
+    <div class="logo-mark">B</div>
+    <h1>BOOSTBALL <span>ARENA</span></h1>
+    <p>Building the arena…</p>
+  </div>
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">B</span><span>BOOSTBALL <b>ARENA</b></span></div>
+    <div class="status"><span class="live-dot"></span><span id="connection-label">PRACTICE MATCH</span></div>
+    <button id="sound-button" class="icon-button" title="Toggle sound" aria-label="Toggle sound">♫</button>
+  </header>
+
+  <section class="hud">
+    <div class="scoreboard">
+      <div class="team blue-team"><span>BLUE</span><strong id="blue-score">0</strong></div>
+      <div class="match-clock"><span id="match-time">5:00</span><small>EXHIBITION</small></div>
+      <div class="team orange-team"><strong id="orange-score">0</strong><span>ORANGE</span></div>
+    </div>
+    <div class="boost-widget">
+      <div class="boost-label"><span>BOOST</span><strong id="boost-value">100</strong></div>
+      <div class="boost-track"><div id="boost-fill"></div></div>
+    </div>
+  </section>
+
+  <div id="toast" class="toast">KICKOFF!</div>
+
+  <div id="start-screen" class="overlay">
+    <div class="menu-card">
+      <div class="eyebrow"><span class="live-dot"></span> ARCADE CAR SOCCER</div>
+      <h1>OWN THE<br><span>ARENA.</span></h1>
+      <p class="menu-copy">Hit the pitch. Build speed. Fly for the ball.<br>Score more goals before the clock runs out.</p>
+      <div class="menu-features">
+        <div><b>01</b><span>PHYSICS-DRIVEN<br>CAR SOCCER</span></div>
+        <div><b>02</b><span>BOOST +<br>AERIALS</span></div>
+        <div><b>03</b><span>3D STADIUM<br>LIGHTING</span></div>
+      </div>
+      <button id="play-button" class="primary-button">ENTER THE ARENA <span>→</span></button>
+      <div class="menu-foot">SINGLE PLAYER DEMO <span>•</span> BUILT FOR THE WEB</div>
+    </div>
+  </div>
+
+  <div id="pause-screen" class="overlay hidden">
+    <div class="menu-card compact">
+      <div class="eyebrow">MATCH PAUSED</div>
+      <h2>TAKE A<br><span>BREATHER.</span></h2>
+      <button id="resume-button" class="primary-button">RESUME MATCH <span>→</span></button>
+      <button id="restart-button" class="secondary-button">RESTART MATCH</button>
+    </div>
+  </div>
+
+  <div class="controls-hint">
+    <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> DRIVE</span>
+    <span><kbd>SPACE</kbd> JUMP</span>
+    <span><kbd>SHIFT</kbd> BOOST</span>
+    <span><kbd>Q</kbd>/<kbd>E</kbd> AIR ROLL</span>
+    <span><kbd>ESC</kbd> PAUSE</span>
+  </div>
+  <div class="mobile-controls" aria-label="Touch controls">
+    <div class="touch-cluster">
+      <button data-control="left">◀</button><button data-control="forward">▲</button><button data-control="back">▼</button><button data-control="right">▶</button>
+    </div>
+    <div class="touch-actions">
+      <button data-control="jump" class="jump-touch">JUMP</button>
+      <button data-control="boost" class="boost-touch">BOOST</button>
+    </div>
+  </div>
+  <div class="crosshair">+</div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
